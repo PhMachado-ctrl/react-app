@@ -10,7 +10,6 @@ function Login() {
         <div class="caixa-login">
             {/* Titulo da tela de login */}
             <div class="titulo-login">
-                <p>{email}</p>
                 <h1>Login</h1>
             </div>
 
@@ -23,7 +22,7 @@ function Login() {
             {/* Grupo do senha */}
             <div class="grupo">
                 <label for="senha">Senha</label> <br />
-                <input id="senha" type="password" />
+                <input id="senha" value={senha} inChange={(e) => setSenha(e.target.value)} type="password" />
             </div>
 
             {/* Link para recuperar a senha */}
