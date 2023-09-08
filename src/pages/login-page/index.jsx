@@ -20,7 +20,7 @@ function Login() {
             {/* Grupo do e-mail */}
             <div className="grupo">
                 <label for="email">E-mail</label> <br/>
-               <input id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="exemplo@exemplo.com"  type="text" />
+                <input id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="exemplo@exemplo.com"  type="text" />
             </div>
 
             {/* Grupo do senha */}
