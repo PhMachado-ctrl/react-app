@@ -7,9 +7,10 @@
     height: auto;
     border: 2px solid #ddd;
     margin: auto;
-    margin-top: 70px;
-    padding: 20px;
+    margin-left: 485px;
+    padding: 48px;
     border-radius: 5px;
+    padding-top: 1px;
 }
 
 .titulo-login{
@@ -17,7 +18,7 @@
     color: var(--cor-primaria);
     font-size: 28px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: -72px;
 }
 
 label {
@@ -35,7 +36,7 @@ input,
 
 #btn-entrar {
     margin-top: 10px;
-    background-color: var(--cor-primaria);
+    background-color: darkblue;
     border: none;
     color: #fff;
     font-weight: 600;
@@ -43,7 +44,7 @@ input,
 
 #btn-entrar:hover {
     cursor: pointer;
-    background-color: var(--cor-secundaria);
+    background-color: blue;
 }
 
 
