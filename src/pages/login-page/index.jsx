@@ -6,6 +6,10 @@ function Login() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
+    const logar = () =>{
+        alert(email + "\n" + senha)
+    };
+
     return(
         <div class="caixa-login">
             {/* Titulo da tela de login */}
@@ -14,15 +18,15 @@ function Login() {
             </div>
 
             {/* Grupo do e-mail */}
-            <div class="grupo">
+            <div className="grupo">
                 <label for="email">E-mail</label> <br/>
-                <input id="email" type="text" value={email} onChage={(e) => setEmail(e.target.value)} placeholder="exemplo@exemplo.com" />
+               <input id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="exemplo@exemplo.com"  type="text" />
             </div>
 
             {/* Grupo do senha */}
-            <div class="grupo">
+            <div className="grupo">
                 <label for="senha">Senha</label> <br />
-                <input id="senha" value={senha} inChange={(e) => setSenha(e.target.value)} type="password" />
+                <input id="senha" value={senha} onChange={(e) => setSenha(e.target.value)} type="password" />
             </div>
 
             {/* Link para recuperar a senha */}
@@ -30,7 +34,7 @@ function Login() {
                 <a href="#">Esqueci minha senha</a>
             </div>
 
-            <button id="btn-entrar">Entrar</button>
+            <button id="btn-entrar" onClick={logar}>Entrar</button>
 
                 
         </div>
