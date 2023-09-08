@@ -8,11 +8,13 @@ function Login() {
     const [senha, setSenha] = useState('');
 
     const logar = () =>{
+        {/* Caso ambos a senha e email sejam nulos */}
         if(!email || !senha){
             Swal.fire({
                 icon:'error',
                 text: 'Os campos de e-mail e senha são obrigatórios!'
             });
+            return;
         }
     };
 
