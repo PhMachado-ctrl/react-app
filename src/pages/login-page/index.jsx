@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 import './index.css';
 
 function Login() {
@@ -7,7 +8,12 @@ function Login() {
     const [senha, setSenha] = useState('');
 
     const logar = () =>{
-        alert(email + "\n" + senha)
+        if(!email || !senha){
+            Swal.fire({
+                icon:'error',
+                text: 'Os campos de e-mail e senha são obrigatórios!'
+            });
+        }
     };
 
     return(
