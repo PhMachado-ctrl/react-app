@@ -10,3 +10,6 @@ Currently, two official plugins are available:
 
 # install Alert
 npm install --save sweetalert2 sweetalert2-react-content
+
+# install Router
+npm i react-router-dom
