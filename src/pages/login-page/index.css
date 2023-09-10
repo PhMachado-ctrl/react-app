@@ -3,11 +3,10 @@
 }
 
 .caixa-login {
-    width: 250px;
+    width: 344px;
     height: auto;
     border: 2px solid #ddd;
     margin: auto;
-    margin-left: 485px;
     padding: 48px;
     border-radius: 5px;
     padding-top: 1px;
@@ -18,7 +17,7 @@
     color: var(--cor-primaria);
     font-size: 28px;
     font-weight: 700;
-    margin-bottom: -72px;
+    margin-bottom: -16px;
 }
 
 label {
