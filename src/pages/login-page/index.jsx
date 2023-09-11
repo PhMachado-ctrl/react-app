@@ -16,6 +16,7 @@ function Login() {
             });
             return;
         }
+        // Me comunicar com a api fazer a autenticação...
     };
 
     return(
