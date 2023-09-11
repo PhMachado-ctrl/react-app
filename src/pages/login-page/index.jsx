@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Swal from 'sweetalert2';
 import './index.css';
 
+import usuarioService from '../../api/usuario-service';
+
 function Login() {
 
     const [email, setEmail] = useState('');
@@ -17,11 +19,12 @@ function Login() {
             return;
         }
         // Me comunicar com a api fazer a autenticação...
+        usuarioService.autenticar(email, senha)
     };
 
     return(
         <div class="caixa-login">
-            {/* Titulo da tela de login */}
+            { /* Titulo da tela de login */}
             <div class="titulo-login">
                 <h1>Login</h1>
             </div>
