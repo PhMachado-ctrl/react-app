@@ -6,8 +6,8 @@ import usuarioService from '../../api/usuario-service';
 
 function Login() {
 
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
+    const [email, setEmail] = useState('admin@admin.com');
+    const [senha, setSenha] = useState('123456');
 
     const logar = () =>{
         {/* Caso ambos a senha e email sejam nulos */}
@@ -20,12 +20,21 @@ function Login() {
         }
         // Me comunicar com a api fazer a autenticação...
         usuarioService.autenticar(email, senha)
+        .then(response => {
+            usuarioService.salvarToken(response.data.token);
+            usuarioService.salvarUsuario(response.data.usuario);
+
+            window.location='/';
+        })
+        .catch(erro => {
+            console.log(erro)
+        })
     };
 
     return(
-        <div class="caixa-login">
-            { /* Titulo da tela de login */}
-            <div class="titulo-login">
+        <div className="caixa-login">
+            { /* Titulo da tela de login */ }
+            <div className="titulo-login">
                 <h1>Login</h1>
             </div>
 

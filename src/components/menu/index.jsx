@@ -1,6 +1,11 @@
 import './index.css';
 
 import { Link, useLocation } from 'react-router-dom';
+import usuarioService from '../../api/usuario-service';
+
+const logout =() => {
+    usuarioService.sairSistema();
+};
 
 function Menu(){
     if(useLocation().pathname !== '/login'){
@@ -9,7 +14,7 @@ function Menu(){
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/clientes'>Clientes</Link></li>
                 <li><Link to='/produtos'>Produtos</Link></li>
-                <li><Link to='/login'>Sair</Link></li>
+                <li><Link onClick={logout}>Sair</Link></li>
             </ul>
         )
     } else {
