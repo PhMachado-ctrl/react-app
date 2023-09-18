@@ -8,7 +8,7 @@ function Cliente (){
   
   const [clientes, setClientes] = useState([]);
 
-
+  // Toda vez que carregar a tela ou carregar algo dentro do método
   useEffect(() =>{
 
     clienteService.obter()
