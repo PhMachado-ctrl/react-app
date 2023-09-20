@@ -1,8 +1,10 @@
 
 import './index.css';
-import clienteService from "../../service/cliente-service"
+import clienteService from "../../api/cliente-service"
 // HOOKs
 import { useEffect, useState } from 'react';
+
+import { Modal, Button } from "react-bootstrap";
 
 function Cliente (){
   
