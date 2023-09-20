@@ -79,11 +79,14 @@ function Cliente (){
                     <td>{cliente.telefone}</td>
                     <td>{cliente.dataCadastro}</td>
                     <td>
-                      <button onClick={editar} class="btn btn-outline-primary btn-sm mr-3">
-                          Editar
+                      <button onClick={editar} 
+                      class="btn btn-outline-primary btn-sm mr-3"
+                      data-bs-toggle="modal" data-bs-target="#modal-cliente">
+                        Editar
                       </button>
-                      <button onClick={excluir} class="btn btn-outline-primary btn-sm mr-3">
-                          Excluir
+                      <button onClick={excluir} 
+                      class="btn btn-outline-primary btn-sm mr-3">
+                        Excluir
                       </button>
                     </td>
                   </tr>
