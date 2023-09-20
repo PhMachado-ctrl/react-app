@@ -4,8 +4,6 @@ import clienteService from "../../api/cliente-service"
 // HOOKs
 import { useEffect, useState } from 'react';
 
-import { Modal, Button } from "react-bootstrap";
-
 function Cliente (){
   
   const [clientes, setClientes] = useState([]);
@@ -48,7 +46,7 @@ function Cliente (){
             <button 
               id="btn-adicionar" 
               className="btn btn-primary btn-sm"
-              data-bs-toggle="modal" data-bs-target="#myModal"
+              data-bs-toggle="modal" data-bs-target="#modal-cliente"
             >
               Adicionar
             </button>
@@ -152,7 +150,7 @@ function Cliente (){
                 {/* <!-- Modal footer --> */}
                 <div className="modal-footer">
                   <button id="btn-salvar" className="btn btn-primary btn-sm">Salvar</button>
-                  <button id="btn-cancelar" className="btn btn-light btn-sm">Cancelar</button>
+                  <button id="btn-cancelar" className="btn btn-light btn-sm" data-bs-dismiss="modal">Cancelar</button>
                 </div>
               </div>
             </div>
