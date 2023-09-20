@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 function Cliente (){
   
   const [clientes, setClientes] = useState([]);
+  const [modoEdicao, setModoEdicao] = useState(false);
 
   // Toda vez que carregar a tela ou carregar algo dentro do método
   useEffect(() =>{
@@ -22,12 +23,16 @@ function Cliente (){
   },[]);
 
   const editar = (id) => {
-    alert(id)
+    setModoEdicao(true);
   }
 
   const excluir = (id) => {
     alert(id)
   }
+
+  const adicionar = () => {
+    setModoEdicao(false);
+  };
 
   return (
         <div className="container">
@@ -47,6 +52,7 @@ function Cliente (){
               id="btn-adicionar" 
               className="btn btn-primary btn-sm"
               data-bs-toggle="modal" data-bs-target="#modal-cliente"
+              onClick={adicionar}
             >
               Adicionar
             </button>
@@ -106,7 +112,7 @@ function Cliente (){
   
                 {/* <!-- Modal Header --> */}
                 <div className="modal-header">
-                  <h4 className="modal-title">Adicionar cliente</h4>
+                  <h4 className="modal-title">{modoEdicao ? "Editar cliente":"Adicionar cliente"}</h4>
                   <button
                     type="button"
                     className="btn-close"
