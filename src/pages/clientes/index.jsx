@@ -48,6 +48,7 @@ function Cliente (){
             <button 
               id="btn-adicionar" 
               className="btn btn-primary btn-sm"
+              data-bs-toggle="modal" data-bs-target="#myModal"
             >
               Adicionar
             </button>
