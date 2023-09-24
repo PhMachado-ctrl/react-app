@@ -8,6 +8,7 @@ function Cliente (){
   
   const [clientes, setClientes] = useState([]);
   const [modoEdicao, setModoEdicao] = useState(false);
+  const [cliente, setCliente] = useState(new Cliente());
 
   // Toda vez que carregar a tela ou carregar algo dentro do método
   useEffect(() =>{
@@ -126,31 +127,42 @@ function Cliente (){
                   <div className="row">
                     <div className="col-sm-2">
                       <label for="id" className="form-label">Id</label>
-                      <input disabled type="text" className="form-control" id="id" />
+                      <input 
+                      disabled type="text" 
+                      className="form-control"
+                       id="id" 
+                       // Aqui estamos alterando só apropriedade ID
+                       onChange={(e) => setCliente({...cliente,id: e.target.value})}
+                      />
                     </div>
   
                     <div className="col-sm-10">
                       <label for="nome" className="form-label">Nome</label>
-                      <input type="text" className="form-control" id="nome" />
+                      <input type="text" className="form-control" id="nome" 
+                         onChange={(e) => setCliente({...cliente,nome: e.target.value})}/>
                     </div>
                   </div>
   
                   <div className="row">
                     <div className="col-sm-4">
                       <label for="email" className="form-label">E-mail</label>
-                      <input type="text" className="form-control" id="email" />
+                      <input type="text" className="form-control" id="email" 
+                         onChange={(e) => setCliente({...cliente,email: e.target.value})}/>
                     </div>
                     <div className="col-sm-2">
                       <label for="telefone" className="form-label">Telefone</label>
-                      <input type="text" className="form-control" id="telefone" />
+                      <input type="text" className="form-control" id="telefone" 
+                         onChange={(e) => setCliente({...cliente,telefone: e.target.value})}/>
                     </div>
                     <div className="col-sm-3">
                       <label for="cpf" className="form-label">CPF</label>
-                      <input type="text" className="form-control" id="cpf" />
+                      <input type="text" className="form-control" id="cpf" 
+                         onChange={(e) => setCliente({...cliente,cpfOuCnpj: e.target.value})}/>
                     </div>
                     <div className="col-sm-3">
                       <label for="dataCadastro" className="form-label">Data de cadastro</label>
-                      <input type="date" className="form-control" id="dataCadastro" disabled />
+                      <input type="date" className="form-control" id="dataCadastro" disabled 
+                         onChange={(e) => setCliente({...cliente,dataCadastro: e.target.value})}/>
                     </div>
                   </div>
   
