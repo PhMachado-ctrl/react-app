@@ -38,11 +38,24 @@ function ClientePage (){
   };
 
   const salvar = () => {
-    if(!cliente.cpfOuCnpj || !cliente.email){
-      alert("E-mail e CPF são obrigatórios.")
+    if(!cliente.nome || !cliente.cpfOuCnpj || !cliente.email){
+      Swal.fire({
+        icon:'error',
+        text: 'Os campos de e-mail e senha são obrigatórios!'
+      });
       return;
     }
+
+    (modoEdicao) ? atualizarClienteBackend(cliente) : adicionarClienteBackend(cliente);
   };
+
+  const adicionarClienteBackend = (cliente) => {
+
+  }
+
+  const atualizarClienteBackend = (cliente) => {
+    
+  }
 
   return (
         <div className="container">
@@ -54,6 +67,7 @@ function ClientePage (){
             <hr />
           </div>
         </div>
+
   
         {/* <!-- Botão adicionar --> */}
         <div className="row">

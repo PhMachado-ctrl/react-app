@@ -13,6 +13,18 @@ function obter(){
     });
 }
 
+function adicionar(cliente){
+    return new Promise((resolve, reject) => {
+        service.post('/clientes', {
+            headers:{
+                'Authorization': usuarioService.obterToken()
+            }
+        })
+        .then(response => resolve(response))
+        .catch(erro => reject(erro))
+    });
+}
+
 export default {
     obter
 }

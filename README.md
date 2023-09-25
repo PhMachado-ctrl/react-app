@@ -19,3 +19,6 @@ npm i axios
 
 # Run APP
 npm run dev
+
+# Modal Bootstrap
+npm install react-bootstrap bootstrap
