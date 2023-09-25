@@ -1,10 +1,12 @@
 
 import './index.css';
 import clienteService from "../../api/cliente-service"
+import Swal from 'sweetalert2'
 // HOOKs
 import { useEffect, useState } from 'react';
+import  Cliente from '../../models/Cliente';
 
-function Cliente (){
+function ClientePage (){
   
   const [clientes, setClientes] = useState([]);
   const [modoEdicao, setModoEdicao] = useState(false);
@@ -33,6 +35,13 @@ function Cliente (){
 
   const adicionar = () => {
     setModoEdicao(false);
+  };
+
+  const salvar = () => {
+    if(!cliente.cpfOuCnpj || !cliente.email){
+      alert("E-mail e CPF são obrigatórios.")
+      return;
+    }
   };
 
   return (
@@ -131,7 +140,8 @@ function Cliente (){
                       disabled type="text" 
                       className="form-control"
                        id="id" 
-                       // Aqui estamos alterando só apropriedade ID
+                       value={cliente.id}
+                       // Change the ID properties
                        onChange={(e) => setCliente({...cliente,id: e.target.value})}
                       />
                     </div>
@@ -139,7 +149,8 @@ function Cliente (){
                     <div className="col-sm-10">
                       <label for="nome" className="form-label">Nome</label>
                       <input type="text" className="form-control" id="nome" 
-                         onChange={(e) => setCliente({...cliente,nome: e.target.value})}/>
+                        value={cliente.nome}
+                        onChange={(e) => setCliente({...cliente,nome: e.target.value})}/>
                     </div>
                   </div>
   
@@ -147,21 +158,25 @@ function Cliente (){
                     <div className="col-sm-4">
                       <label for="email" className="form-label">E-mail</label>
                       <input type="text" className="form-control" id="email" 
-                         onChange={(e) => setCliente({...cliente,email: e.target.value})}/>
+                        value={cliente.email}
+                        onChange={(e) => setCliente({...cliente,email: e.target.value})}/>
                     </div>
                     <div className="col-sm-2">
                       <label for="telefone" className="form-label">Telefone</label>
                       <input type="text" className="form-control" id="telefone" 
+                         value={cliente.telefone}
                          onChange={(e) => setCliente({...cliente,telefone: e.target.value})}/>
                     </div>
                     <div className="col-sm-3">
                       <label for="cpf" className="form-label">CPF</label>
                       <input type="text" className="form-control" id="cpf" 
+                         value={cliente.cpfOuCnpj}
                          onChange={(e) => setCliente({...cliente,cpfOuCnpj: e.target.value})}/>
                     </div>
                     <div className="col-sm-3">
                       <label for="dataCadastro" className="form-label">Data de cadastro</label>
                       <input type="date" className="form-control" id="dataCadastro" disabled 
+                        value={cliente.dataCadastro}
                          onChange={(e) => setCliente({...cliente,dataCadastro: e.target.value})}/>
                     </div>
                   </div>
@@ -170,7 +185,7 @@ function Cliente (){
   
                 {/* <!-- Modal footer --> */}
                 <div className="modal-footer">
-                  <button id="btn-salvar" className="btn btn-primary btn-sm">Salvar</button>
+                  <button id="btn-salvar" className="btn btn-primary btn-sm" onClick={salvar}>Salvar</button>
                   <button id="btn-cancelar" className="btn btn-light btn-sm" data-bs-dismiss="modal">Cancelar</button>
                 </div>
               </div>
@@ -181,4 +196,4 @@ function Cliente (){
     )
 }
 
-export default Cliente;
+export default ClientePage;
